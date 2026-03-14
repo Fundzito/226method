@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Kitchen - 226 Method</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px auto;
+      border: 3px solid purple;
+      box-shadow: 0 0 25px purple;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 10px auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    th, td {
+      border: 1px solid #555;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #222;
+    }
+
+    tr:hover {
+      background-color: #1a1a1a;
+    }
+
+    details {
+      margin-top: 5px;
+      text-align: left;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #b39ddb;
+    }
+
+    details[open] summary::after { content: " ▲"; float: right; }
+    details summary::after { content: " ▼"; float: right; }
+
+    a {
+      color: #b39ddb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+.protein {
+  background-color: #8e24aa; /* purple */
+  color: white;
+}
+
+.carbs {
+  background-color: #3949ab; /* blue */
+  color: white;
+}
+
+.fats {
+  background-color: #2e7d32; /* green */
+  color: white;
+}
+
+ol {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.pro-tip {
+  background-color: #2c003e; /* dark purple */
+  border-left: 5px solid #8e24aa; /* bright purple accent */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.pro-tip strong {
+  color: #b39ddb; /* slightly lighter purple for emphasis */
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #111;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.nav-link {
+  display: inline-block;
+  color: #b39ddb;
+  font-size: 16px;
+  margin: 5px 8px;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: purple;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Sticky Full Navigation Bar -->
+<nav style="
+  position: sticky;
+  top: 0;
+  background-color: #111;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="226intro.html" class="nav-link">Intro</a>
+  <a href="226workout.html" class="nav-link">Workout</a>
+  <a href="226kitchen.html" class="nav-link">Kitchen</a>
+  <a href="226fun.html" class="nav-link">Fun</a>
+  <a href="226outro.html" class="nav-link">Outro</a>
+</nav>
+
+<style>
+.nav-link {
+  color: #b39ddb;
+  font-size: 18px;
+  margin: 0 12px;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  background-color: purple;
+  color: white;
+}
+</style>
+
+<!-- Logo -->
+<a href="index.html">
+  <img src="226logo.png" alt="226 Method Logo" class="logo">
+</a>
+
+<h1>The Kitchen - High-Gain Fuel</h1>
+
+<h2>Morning Ritual - ACV Fat-Burner</h2>
+<p>Kickstart digestion, metabolism, and fat-burning benefits.</p>
+<p>1-2 tbsp raw Apple Cider Vinegar</p>
+<p>1 tsp raw honey</p>
+<p>1 tsp fresh grated ginger (or 1/2 tsp ginger powder)</p>
+<p>1/4 tsp cayenne pepper</p>
+<p>8-12 oz water</p>
+
+<h3>Instructions</h3>
+<ol>
+  <li>Mix ingredients in water.</li>
+  <li>Drink on an empty stomach, 15-30 min before breakfast.</li>
+  <li>Optional: pinch of cinnamon for flavor and blood sugar support.</li>
+  <li>Rinse mouth after drinking to protect enamel.</li>
+</ol>
+
+<details>
+  <summary>Tips & Alternatives</summary>
+  <ul>
+    <li>Start with 1 tbsp ACV if new to it.</li>
+    <li>Honey is optional for lower-calorie preference.</li>
+    <li>Ginger powder works if fresh ginger isn’t available.</li>
+    <li>Cayenne can be reduced or increased to taste.</li>
+  </ul>
+</details>
+
+<h2>Meal Options - Flexible High-Gain Fuel</h2>
+<table>
+  <tr>
+    <th>Meal</th>
+    <th>Option 1</th>
+    <th>Option 2</th>
+    <th>Option 3</th>
+  </tr>
+  <tr>
+    <td><strong>Breakfast</strong></td>
+    <td>Grits + Tuna + Eggs + 50g Protein Shake (~100g protein)
+      <details><summary>Swaps</summary>Eggs -> egg whites -> scrambled tofu</details>
+    </td>
+    <td>Oatmeal + Whey + Peanut Butter + Banana
+      <details><summary>Swaps</summary>PB -> almond butter, banana -> berries</details>
+    </td>
+    <td>Greek Yogurt + Berries + Granola + Chia Seeds
+      <details><summary>Swaps</summary>Yogurt -> Skyr or kefir</details>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Lunch</strong></td> 
+    <td>Grilled Chicken + Brown Rice + Broccoli
+      <details><summary>Swaps</summary>Grilled -> baked -> stir-fried; Chicken ↔ turkey -> tofu</details>
+    </td>
+    <td>Turkey Wrap + Spinach + Avocado + Whole Wheat Tortilla
+      <details><summary>Swaps</summary>Wrap -> whole grain pita or lettuce wrap</details>
+    </td>
+    <td>Salmon + Quinoa + Asparagus
+      <details><summary>Swaps</summary>Baked -> pan-seared -> air-fried; Quinoa -> brown rice</details>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Dinner</strong></td>
+    <td>Steak + Sweet Potato + Green Beans
+      <details><summary>Swaps</summary>Steak -> lean beef, lamb, or baked tofu; Sweet potato -> roasted pumpkin or mashed potato</details>
+    </td>
+    <td>Chicken Stir-Fry with Mixed Veggies + Rice
+      <details><summary>Swaps</summary>Chicken -> shrimp or beef; Stir-fry -> oven-roasted veggies</details>
+    </td>
+    <td>Eggplant + Ground Turkey + Tomato Sauce + Parmesan
+      <details><summary>Swaps</summary>Turkey -> lean beef or lentils; Baked -> pan-fried or air-fried eggplant</details>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Snacks</strong></td>
+    <td>Protein Shake (50g protein powder + milk/water)
+      <details><summary>Swaps</summary>Milk -> oat/almond milk</details>
+    </td>
+    <td>Cottage Cheese + Pineapple
+      <details><summary>Swaps</summary>Cottage cheese -> Greek yogurt</details>
+    </td>
+    <td>Mixed Nuts + Apple
+      <details><summary>Swaps</summary>Apple -> pear, banana, or berries</details>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Supplements / Extras</strong></td>
+    <td>Whey / Plant Protein</td>
+    <td>Creatine</td>
+    <td>Omega-3 Fish Oil</td>
+  </tr>
+</table>
+<h2>The 226 Grocery List - Budget Muscle Foods</h2>
+
+ <div class="pro-tip">
+  You don't need expensive supplements or fancy health foods to build strength.  
+  If you can afford them, go for it-but they aren't necessary.  
+
+  I use some of the pricier options myself, usually when they're on sale, but I'm also diligent about finding cheaper alternatives. <strong>Pro tip:</strong> always compare the ingredients. Sometimes the budget option has exactly what you need, and you're just paying extra for added ingredients or branding with the more expensive one.  
+
+  The <strong>226 Method</strong> focuses on simple, affordable foods that deliver high protein, energy, and the nutrients your body needs to grow and recover.
+</div>
+<p>
+
+</p>
+
+<table>
+  <tr>
+    <th class="protein">Protein</th>
+    <th class="carbs">Carbs</th>
+    <th class="fats">Healthy Fats</th>
+  </tr>
+
+  <tr>
+    <td>
+      Eggs<br>
+      Tuna<br>
+      Chicken Breast or Chicken Thighs<br>
+      Ground Turkey<br>
+      Lean Ground Beef<br>
+      Greek Yogurt<br>
+      Cottage Cheese<br>
+      Protein Powder
+    </td>
+
+    <td>
+      Oatmeal<br>
+      Brown Rice<br>
+      White Rice<br>
+      Potatoes<br>
+      Sweet Potatoes<br>
+      Whole Wheat Bread<br>
+      Quinoa<br>
+      Beans
+    </td>
+
+    <td>
+      Avocados<br>
+      Olive Oil<br>
+      Real Butter<br>
+      Nuts (Almonds, Peanuts, Cashews)<br>
+      Peanut Butter or Almond Butter<br>
+      Seeds (Chia, Flax)
+    </td>
+  </tr>
+</table>
+
+<h3>Budget Tip</h3>
+
+<p>
+Frozen vegetables and frozen fruit are often cheaper than fresh and last
+longer. They are just as nutritious and perfect for quick meals.
+</p>
+
+<h2>The 226 Plate Rule</h2>
+
+<p>
+One of the easiest ways to stay on track is to build your meals around
+a simple plate structure. Instead of counting every calorie, focus on
+what your plate looks like.
+</p>
+
+<table>
+  <tr>
+    <th style="background-color:#2e7d32;color:white;">Vegetables</th>
+    <th style="background-color:#8e24aa;color:white;">Protein</th>
+    <th style="background-color:#3949ab;color:white;">Carbs</th>
+  </tr>
+
+  <tr>
+    <td>
+      40-50% of your plate<br><br>
+      Broccoli<br>
+      Spinach<br>
+      Asparagus<br>
+      Green beans<br>
+      Peppers<br>
+      Mixed vegetables
+    </td>
+
+    <td>
+      30-40% of your plate<br><br>
+      Chicken<br>
+      Fish<br>
+      Eggs<br>
+      Lean beef<br>
+      Turkey<br>
+      Tofu
+    </td>
+
+    <td>
+      20-30% of your plate<br><br>
+      Rice<br>
+      Potatoes<br>
+      Oats<br>
+      Quinoa<br>
+      Whole grain bread
+    </td>
+  </tr>
+</table>
+
+<p>
+In the 226 Method, vegetables and protein should make up about
+<strong>70-80% of your plate</strong>. Carbohydrates fill the remaining
+portion to provide energy for training and recovery.
+</p>
+
+<p>
+You don't need perfect measurements. Just build your plate with mostly
+protein and vegetables, and you'll naturally stay on track.
+</p>
+
+<p>
+The key to the 226 Method is consistency. Stock your kitchen with foods that
+make it easier to stay disciplined every day.
+</p>
+<!-- Add this below the grocery list or wherever you want the link -->
+<a href="226fun.html">
+  <button id="fun-btn">Explore the Fun Page</button>
+</a>
+
+<style>
+  #fun-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: purple;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  #fun-btn:hover {
+    background-color: darkmagenta;
+  }
+</style>
+© 2026 The 226 Method | TrainWithTonio
+</body>
+</html>
