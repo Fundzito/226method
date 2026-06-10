@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>226 Method Rates</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #050008, #13001f, #250044);
+      color: white;
+      overflow-x: hidden;
+      padding: 28px 16px;
+      position: relative;
+    }
+
+    .bubble {
+      position: fixed;
+      border-radius: 50%;
+      background: rgba(192, 132, 255, 0.13);
+      box-shadow: 0 0 40px rgba(192, 132, 255, 0.35);
+      animation: float 10s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .bubble.one {
+      width: 190px;
+      height: 190px;
+      top: 4%;
+      left: -70px;
+    }
+
+    .bubble.two {
+      width: 130px;
+      height: 130px;
+      top: 45%;
+      right: -45px;
+      animation-delay: 2s;
+    }
+
+    .bubble.three {
+      width: 230px;
+      height: 230px;
+      bottom: -90px;
+      left: 18%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-28px); }
+    }
+
+    .container {
+      max-width: 720px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo-bubble {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: rgba(192, 132, 255, 0.14);
+      border: 2px solid rgba(192, 132, 255, 0.45);
+      box-shadow:
+        0 0 30px rgba(192, 132, 255, 0.45),
+        0 0 70px rgba(192, 132, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(14px);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      color: #c084ff;
+      text-shadow: 0 0 15px #9d4edd, 0 0 35px #9d4edd;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    .intro, .card, .notice {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(192, 132, 255, 0.4);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(192, 132, 255, 0.15);
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .intro h2 {
+      color: #c084ff;
+      margin-bottom: 8px;
+    }
+
+    .services {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(192, 132, 255, 0.35);
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #c084ff;
+      text-shadow: 0 0 12px rgba(192, 132, 255, 0.7);
+      margin-bottom: 12px;
+    }
+
+    .terms {
+      color: #d7d7d7;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding-left: 18px;
+    }
+
+    .terms li {
+      margin-bottom: 6px;
+    }
+
+    .small {
+      color: #aaa;
+      font-size: 0.86rem;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #c084ff;
+      font-size: 1.5rem;
+      margin: 34px 0 15px;
+      text-shadow: 0 0 12px rgba(192, 132, 255, 0.6);
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px;
+      margin-bottom: 14px;
+      border-radius: 18px;
+      background: linear-gradient(45deg, #7b2cbf, #c084ff);
+      color: #090009;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(192, 132, 255, 0.35);
+      transition: 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 30px rgba(192, 132, 255, 0.55);
+    }
+
+    .notice {
+      margin-top: 25px;
+      color: #ccc;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      color: #ccc;
+      margin-top: 35px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .logo-bubble {
+        width: 155px;
+        height: 155px;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bubble one"></div>
+  <div class="bubble two"></div>
+  <div class="bubble three"></div>
+
+  <main class="container">
+
+    <header class="header">
+      <div class="logo-bubble">
+        <img src="226logo.png" alt="226 Logo" class="logo" />
+      </div>
+
+      <h1>226 METHOD</h1>
+      <p class="tagline">Train your mind just as hard as you train your body.</p>
+    </header>
+
+    <section class="intro">
+      <h2>DYWT?</h2>
+      <p>Did You Workout Today?</p>
+      <p class="small">Simple. Consistent. Built for real life.</p>
+    </section>
+
+    <section class="services">
+
+      <div class="card">
+        <div class="service-title">Form Check</div>
+        <div class="price">$6</div>
+        <ul class="terms">
+          <li>Submit up to 5 minutes of video</li>
+          <li>Covers 1–2 exercises</li>
+          <li>Receive up to a 5-minute response video</li>
+          <li>Includes technique feedback, corrections, and execution tips</li>
+          <li>Response delivered within 24 hours</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="service-title">Workout Program</div>
+        <div class="price">$26</div>
+        <ul class="terms">
+          <li>Personalized 3-week workout program</li>
+          <li>Built around your goals, experience level, and equipment</li>
+          <li>Includes exercises, sets, reps, and training schedule</li>
+          <li>Home or gym options available</li>
+          <li>Delivered within 72 hours</li>
+        </ul>
+        <p class="small">
+          Best results come from consistency, proper nutrition, hydration, sleep, and recovery.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="service-title">Nutrition Guide</div>
+        <div class="price">$26</div>
+        <ul class="terms">
+          <li>1-week grocery shopping guide</li>
+          <li>3 high-protein meal recipes</li>
+          <li>Focus on portion control and consistency</li>
+          <li>Includes protein recommendations, hydration tips, and simple food swaps</li>
+          <li>Delivered within 72 hours</li>
+        </ul>
+        <p class="small">
+          General fitness and nutrition education only. Not medical nutrition advice.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="service-title">Accountability Check-In</div>
+        <div class="price">$26</div>
+        <ul class="terms">
+          <li>Two scheduled check-in calls per week</li>
+          <li>Monday progress and goal-setting call</li>
+          <li>Friday review and accountability call</li>
+          <li>Habit, consistency, and goal review</li>
+          <li>Calls must be completed within the same week</li>
+        </ul>
+      </div>
+
+<div class="card">
+    <div class="service-title">One-on-One Training Session</div>
+    <div class="price">$26</div>
+
+
+<ul class="terms">
+    <li>60-minute personalized training session</li>
+    <li>3 tailored movements based on your goals</li>
+    <li>1 cardio activity</li>
+    <li>Guided stretching and recovery</li>
+    <li>Exercise instruction and form correction throughout the session</li>
+    <li>Tips for building confidence and independence in the gym</li>
+</ul>
+
+<p class="small">
+    Designed to teach you how to train effectively when you're on your own.
+</p>
+
+<p class="small">
+    The goal is not to create dependency. The goal is to help you learn what to do when you're training by yourself.
+</p>
+
+<p class="small">
+    Sessions are scheduled in advance and may be conducted in a gym or approved training location.
+</p>
+
+</div>
+
+
+
+      <div class="card">
+        <div class="service-title">226 Starter Package</div>
+        <div class="price">$52</div>
+        <ul class="terms">
+          <li>3-week workout program</li>
+          <li>1-week nutrition guide</li>
+          <li>Accountability check-in support</li>
+          <li>Built to help you start with structure, focus, and consistency</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <h2 class="section-title">Payment</h2>
+
+    <a class="button" href="https://cash.app/$YourCashTag">
+      Pay With Cash App
+    </a>
+
+    <h2 class="section-title">Contact</h2>
+
+    <a class="button" href="https://www.tiktok.com/@226tonio">
+      TikTok: @226tonio
+    </a>
+
+    <a class="button" href="https://www.instagram.com/just_x_tony">
+      Instagram: @just_x_tony
+    </a>
+
+    <div class="notice">
+      Free fitness tips are available on the 226 Method website. Paid services are for personalized guidance, structure, accountability, and direct feedback.
+    </div>
+
+    <footer class="footer">
+      <strong>226</strong><br />
+      Built on consistency. Powered by discipline.
+    </footer>
+
+  </main>
+
+</body>
+</html>
